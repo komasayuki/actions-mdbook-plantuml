@@ -1,0 +1,13 @@
+name: 'actions-mdbook-plautuml'
+description: 'Docker container action for generating mdbook documents with plantuml'
+inputs:
+    path:
+        description: 'source folder'
+        required: true
+        default: './'
+
+runs:
+    using: 'docker'
+    image: 'docker://komasayuki/actions-mdbook-plantuml'
+    args:
+        - ${{ inputs.path }}
